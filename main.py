@@ -63,15 +63,14 @@ def send_message():
     Uses the twilio library to send a message via SMS
     :return:
     """
-    if will_rain:
 
-        client = Client(account_sid, auth_token)
+    client = Client(account_sid, auth_token)
 
-        message = client.messages.create(
-            body="It's going to rain, please bring an umbrella. ☂️",
-            from_=TWILIO_PHONE,
-            to=YOUR_PHONE,
-        )
+    message = client.messages.create(
+        body="It's going to rain, please bring an umbrella. ☂️",
+        from_=TWILIO_PHONE,
+        to=YOUR_PHONE,
+    )
 
 if will_rain():
     send_message()
